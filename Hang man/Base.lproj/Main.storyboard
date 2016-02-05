@@ -1,25 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hang_man" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="1WI-0I-lhK"/>
+                        <viewControllerLayoutGuide type="bottom" id="T69-iZ-DoQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBg" translatesAutoresizingMaskIntoConstraints="NO" id="8dQ-MT-2KO">
+                                <rect key="frame" x="0.0" y="0.0" width="290" height="568"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="568" id="6sN-6F-Twi"/>
+                                    <constraint firstAttribute="width" constant="290" id="kfR-Ng-5Qh"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sap-s0-SZG">
+                                <rect key="frame" x="124" y="384" width="73" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="Glt-ft-gke"/>
+                                    <constraint firstAttribute="height" constant="42" id="W8e-t6-mLn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="30"/>
+                                <state key="normal" title="Rule"/>
+                                <connections>
+                                    <action selector="ruleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QG1-Ss-Leb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJv-XX-PHi">
+                                <rect key="frame" x="124" y="329" width="73" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="CR8-2E-UxY"/>
+                                    <constraint firstAttribute="width" constant="73" id="vyR-Fc-AZx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="30"/>
+                                <state key="normal" title="Mode"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Im1-HW-Q2p">
+                                <rect key="frame" x="124" y="279" width="73" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="iA1-0G-OLj"/>
+                                    <constraint firstAttribute="width" constant="73" id="wtN-L1-m1Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="30"/>
+                                <state key="normal" title="Play"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8dQ-MT-2KO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="11z-ra-JDN"/>
+                            <constraint firstItem="Sap-s0-SZG" firstAttribute="leading" secondItem="XJv-XX-PHi" secondAttribute="leading" id="8R1-rU-mvR"/>
+                            <constraint firstItem="XJv-XX-PHi" firstAttribute="top" secondItem="Im1-HW-Q2p" secondAttribute="bottom" constant="8" symbolic="YES" id="CqA-Vc-6XL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8dQ-MT-2KO" secondAttribute="trailing" constant="14" id="Eav-pC-H56"/>
+                            <constraint firstItem="Sap-s0-SZG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nw3-Ph-elG"/>
+                            <constraint firstItem="Sap-s0-SZG" firstAttribute="top" secondItem="XJv-XX-PHi" secondAttribute="bottom" constant="13" id="cah-yq-vM8"/>
+                            <constraint firstItem="8dQ-MT-2KO" firstAttribute="bottom" secondItem="T69-iZ-DoQ" secondAttribute="top" id="gPS-Nb-22j"/>
+                            <constraint firstItem="XJv-XX-PHi" firstAttribute="leading" secondItem="Im1-HW-Q2p" secondAttribute="leading" id="oa0-31-OE3"/>
+                            <constraint firstItem="8dQ-MT-2KO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ylr-nV-wzS"/>
+                            <constraint firstItem="T69-iZ-DoQ" firstAttribute="top" secondItem="Sap-s0-SZG" secondAttribute="bottom" constant="142" id="zMA-my-c10"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-71" y="307"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4gd-ee-GqU">
+            <objects>
+                <viewController id="JVF-gm-A8e" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZBd-Ly-DPH"/>
+                        <viewControllerLayoutGuide type="bottom" id="FmF-Md-39B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uQq-z9-Ras">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kIN-L5-UJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="285" y="307"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menuBg" width="2299" height="4398"/>
+    </resources>
 </document>
