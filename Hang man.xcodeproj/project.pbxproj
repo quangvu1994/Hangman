@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74ABD8871CA0615400C366BE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ABD8861CA0615400C366BE /* Category.swift */; };
 		74C5AD441C642F0D0092919F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C5AD431C642F0D0092919F /* AppDelegate.swift */; };
-		74C5AD461C642F0D0092919F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C5AD451C642F0D0092919F /* ViewController.swift */; };
+		74C5AD461C642F0D0092919F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C5AD451C642F0D0092919F /* MenuViewController.swift */; };
 		74C5AD491C642F0D0092919F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74C5AD471C642F0D0092919F /* Main.storyboard */; };
 		74C5AD4B1C642F0D0092919F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74C5AD4A1C642F0D0092919F /* Assets.xcassets */; };
 		74C5AD4E1C642F0D0092919F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74C5AD4C1C642F0D0092919F /* LaunchScreen.storyboard */; };
@@ -34,9 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		74ABD8861CA0615400C366BE /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		74C5AD401C642F0D0092919F /* Hang man.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hang man.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74C5AD431C642F0D0092919F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		74C5AD451C642F0D0092919F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		74C5AD451C642F0D0092919F /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		74C5AD481C642F0D0092919F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74C5AD4A1C642F0D0092919F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74C5AD4D1C642F0D0092919F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,11 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				74C5AD431C642F0D0092919F /* AppDelegate.swift */,
-				74C5AD451C642F0D0092919F /* ViewController.swift */,
+				74C5AD451C642F0D0092919F /* MenuViewController.swift */,
 				74C5AD471C642F0D0092919F /* Main.storyboard */,
 				74C5AD4A1C642F0D0092919F /* Assets.xcassets */,
 				74C5AD4C1C642F0D0092919F /* LaunchScreen.storyboard */,
 				74C5AD4F1C642F0D0092919F /* Info.plist */,
+				74ABD8861CA0615400C366BE /* Category.swift */,
 			);
 			path = "Hang man";
 			sourceTree = "<group>";
@@ -259,8 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74C5AD461C642F0D0092919F /* ViewController.swift in Sources */,
+				74C5AD461C642F0D0092919F /* MenuViewController.swift in Sources */,
 				74C5AD441C642F0D0092919F /* AppDelegate.swift in Sources */,
+				74ABD8871CA0615400C366BE /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +489,7 @@
 				74C5AD6A1C642F0D0092919F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		74C5AD6B1C642F0D0092919F /* Build configuration list for PBXNativeTarget "Hang manTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +498,7 @@
 				74C5AD6D1C642F0D0092919F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		74C5AD6E1C642F0D0092919F /* Build configuration list for PBXNativeTarget "Hang manUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +507,7 @@
 				74C5AD701C642F0D0092919F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
