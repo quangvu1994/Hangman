@@ -40,7 +40,7 @@ class Category {
         4 : "Particle",
         5 : "Galaxy"
     ]
-    var country : [Int : String]! = [
+    var nation : [Int : String]! = [
         1 : "Vietnam",
         2 : "England",
         3 : "Spain",
@@ -55,13 +55,14 @@ class Category {
         5 : "Sky diving"
     ]
     
+    
     func getRandomWord(categoryName: String) -> String?{
         var category = Dictionary<Int, String>()
-        switch categoryName {
+        switch categoryName.lowercaseString {
         case "sport":
             category = sport
-        case "country":
-            category = country
+        case "nation":
+            category = nation
         case "people":
             category = people
         case "science":

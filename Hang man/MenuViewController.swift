@@ -8,27 +8,34 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
-    @IBOutlet weak var resultWord: UITextField!
-    @IBOutlet weak var guessWord: UITextField!
+class MenuViewController: UIViewController, UITextFieldDelegate {
+    var word: String = ""
+    let limitLength = 1
     
-    @IBAction func guessButton(sender: AnyObject) {
-        
-    }
+    @IBOutlet weak var resultWord: UITextField!
+    @IBOutlet weak var guessWord: UITextField?
+
     @IBAction func getNationWord(sender: AnyObject) {
         let category = Category()
-        let word = category.getRandomWord("Nation")
+        word = category.getRandomWord("Nation")!
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        guessWord?.delegate = self
     }
     
-    func checkMaxLength(textField: UITextField!, maxLength: Int) {
-        if (textField.text!.characters.count > maxLength) {
-            textField.deleteBackward()
-        }
+    /**
+     Limit the UITextField length to one -> User can only guess one letter at a time
+     */
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text
+            else {
+                return true
+            }
+        let newLength = text.characters.count + string.characters.count - range.length
+        return newLength <= limitLength
     }
     
 }
