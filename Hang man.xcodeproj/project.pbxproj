@@ -15,6 +15,8 @@
 		74C5AD4E1C642F0D0092919F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74C5AD4C1C642F0D0092919F /* LaunchScreen.storyboard */; };
 		74C5AD591C642F0D0092919F /* Hang_manTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C5AD581C642F0D0092919F /* Hang_manTests.swift */; };
 		74C5AD641C642F0D0092919F /* Hang_manUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C5AD631C642F0D0092919F /* Hang_manUITests.swift */; };
+		74DE63CD1CA310EB004F665B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE63CC1CA310EB004F665B /* CategoryViewController.swift */; };
+		74DE63CF1CA3116E004F665B /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE63CE1CA3116E004F665B /* PlayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		74C5AD5F1C642F0D0092919F /* Hang manUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hang manUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74C5AD631C642F0D0092919F /* Hang_manUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hang_manUITests.swift; sourceTree = "<group>"; };
 		74C5AD651C642F0D0092919F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74DE63CC1CA310EB004F665B /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		74DE63CE1CA3116E004F665B /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				74C5AD4C1C642F0D0092919F /* LaunchScreen.storyboard */,
 				74C5AD4F1C642F0D0092919F /* Info.plist */,
 				74ABD8861CA0615400C366BE /* Category.swift */,
+				74DE63CC1CA310EB004F665B /* CategoryViewController.swift */,
+				74DE63CE1CA3116E004F665B /* PlayViewController.swift */,
 			);
 			path = "Hang man";
 			sourceTree = "<group>";
@@ -262,6 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74DE63CD1CA310EB004F665B /* CategoryViewController.swift in Sources */,
+				74DE63CF1CA3116E004F665B /* PlayViewController.swift in Sources */,
 				74C5AD461C642F0D0092919F /* MenuViewController.swift in Sources */,
 				74C5AD441C642F0D0092919F /* AppDelegate.swift in Sources */,
 				74ABD8871CA0615400C366BE /* Category.swift in Sources */,

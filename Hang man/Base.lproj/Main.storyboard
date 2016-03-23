@@ -84,7 +84,7 @@
         <!--CatogeryViewController-->
         <scene sceneID="v2y-h8-xrN">
             <objects>
-                <viewController title="CatogeryViewController" id="4kj-hA-0Ir" customClass="MenuViewController" customModule="Hang_man" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="CatogeryViewController" id="4kj-hA-0Ir" customClass="CategoryViewController" customModule="Hang_man" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hEl-Cc-8mb"/>
                         <viewControllerLayoutGuide type="bottom" id="Dp4-qY-kcE"/>
@@ -128,7 +128,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Nation"/>
                                 <connections>
-                                    <action selector="getNationWord:" destination="4kj-hA-0Ir" eventType="touchUpInside" id="0n5-OD-4Mo"/>
+                                    <action selector="getNationWord:" destination="4kj-hA-0Ir" eventType="touchUpInside" id="cdB-v7-Ucp"/>
                                     <segue destination="iXs-RS-6M9" kind="push" id="66W-0C-5rD"/>
                                 </connections>
                             </button>
@@ -199,7 +199,7 @@
         <!--PlayViewController-->
         <scene sceneID="DRf-jG-jxt">
             <objects>
-                <viewController title="PlayViewController" id="iXs-RS-6M9" customClass="MenuViewController" customModule="Hang_man" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="PlayViewController" id="iXs-RS-6M9" customClass="PlayViewController" customModule="Hang_man" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lQd-O6-TAo"/>
                         <viewControllerLayoutGuide type="bottom" id="t43-Fk-HNt"/>
@@ -215,58 +215,60 @@
                                     <constraint firstAttribute="width" constant="200" id="8v7-M5-gvW"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" translatesAutoresizingMaskIntoConstraints="NO" id="EHX-dC-n0v">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" translatesAutoresizingMaskIntoConstraints="NO" id="EHX-dC-n0v">
                                 <rect key="frame" x="63" y="97" width="195" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="195" id="PML-55-JRG"/>
                                     <constraint firstAttribute="height" constant="160" id="S5P-U9-PNv"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body" translatesAutoresizingMaskIntoConstraints="NO" id="fU2-ke-XWr">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="body" translatesAutoresizingMaskIntoConstraints="NO" id="fU2-ke-XWr">
                                 <rect key="frame" x="87" y="122" width="147" height="243"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="147" id="BEX-Ru-tM2"/>
                                     <constraint firstAttribute="height" constant="243" id="Ggk-rE-epS"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leftLegArm" translatesAutoresizingMaskIntoConstraints="NO" id="6d8-4K-9jr">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leftLegArm" translatesAutoresizingMaskIntoConstraints="NO" id="6d8-4K-9jr">
                                 <rect key="frame" x="90" y="194" width="119" height="171"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="171" id="YdN-8l-SBO"/>
                                     <constraint firstAttribute="width" constant="119" id="wRb-kz-eZF"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leftLegArm" translatesAutoresizingMaskIntoConstraints="NO" id="qH9-kB-JCR">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leftLegArm" translatesAutoresizingMaskIntoConstraints="NO" id="qH9-kB-JCR">
                                 <rect key="frame" x="87" y="150" width="125" height="166"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="125" id="MTE-v0-dOU"/>
                                     <constraint firstAttribute="height" constant="166" id="mhh-bO-dqg"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightLegArm" translatesAutoresizingMaskIntoConstraints="NO" id="F3k-ml-1h2">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightLegArm" translatesAutoresizingMaskIntoConstraints="NO" id="F3k-ml-1h2">
                                 <rect key="frame" x="110" y="145" width="110" height="167"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="1O4-rc-h6j"/>
                                     <constraint firstAttribute="height" constant="167" id="y6N-1X-mSe"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightLegArm" translatesAutoresizingMaskIntoConstraints="NO" id="aEt-Dr-QNM">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightLegArm" translatesAutoresizingMaskIntoConstraints="NO" id="aEt-Dr-QNM">
                                 <rect key="frame" x="109" y="188" width="111" height="167"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="fKh-2C-5n3"/>
                                     <constraint firstAttribute="height" constant="167" id="nyQ-ft-gsa"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o4a-jM-PXB">
-                                <rect key="frame" x="78" y="568" width="238" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K54-8s-fhY">
+                                <rect key="frame" x="176" y="698" width="43" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="238" id="9WL-wq-g6E"/>
-                                    <constraint firstAttribute="height" constant="30" id="vIK-zA-9D3"/>
+                                    <constraint firstAttribute="height" constant="30" id="5Yr-bb-FUq"/>
+                                    <constraint firstAttribute="width" constant="43" id="OGy-XE-599"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S4b-e2-Rlz">
+                                <state key="normal" title="Guess"/>
+                                <connections>
+                                    <action selector="guessAction:" destination="iXs-RS-6M9" eventType="touchUpInside" id="tBX-Mt-LRC"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S4b-e2-Rlz">
                                 <rect key="frame" x="149" y="648" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="8kh-5S-pIw"/>
@@ -275,23 +277,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K54-8s-fhY">
-                                <rect key="frame" x="176" y="698" width="43" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lol" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0h-tD-f9o">
+                                <rect key="frame" x="50" y="569" width="294" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="5Yr-bb-FUq"/>
-                                    <constraint firstAttribute="width" constant="43" id="OGy-XE-599"/>
+                                    <constraint firstAttribute="height" constant="21" id="bfF-YF-R3F"/>
+                                    <constraint firstAttribute="width" constant="294" id="mHq-So-NpD"/>
                                 </constraints>
-                                <state key="normal" title="Guess"/>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="o4a-jM-PXB" firstAttribute="centerX" secondItem="S4b-e2-Rlz" secondAttribute="centerX" id="4lu-N8-dYo"/>
                             <constraint firstItem="qH9-kB-JCR" firstAttribute="centerX" secondItem="6d8-4K-9jr" secondAttribute="centerX" id="AJa-9P-I7I"/>
                             <constraint firstItem="aEt-Dr-QNM" firstAttribute="top" secondItem="lQd-O6-TAo" secondAttribute="bottom" constant="124" id="BdB-MS-42X"/>
                             <constraint firstItem="F3k-ml-1h2" firstAttribute="top" secondItem="lQd-O6-TAo" secondAttribute="bottom" constant="81" id="Byd-fc-gc7"/>
                             <constraint firstItem="EHX-dC-n0v" firstAttribute="top" secondItem="lQd-O6-TAo" secondAttribute="bottom" constant="33" id="ChS-yV-9bt"/>
                             <constraint firstItem="EHX-dC-n0v" firstAttribute="leading" secondItem="8ew-p0-goK" secondAttribute="leadingMargin" constant="43" id="Ejd-1b-klY"/>
+                            <constraint firstItem="S4b-e2-Rlz" firstAttribute="top" secondItem="H0h-tD-f9o" secondAttribute="bottom" constant="58" id="FTr-Qk-9Ia"/>
+                            <constraint firstItem="H0h-tD-f9o" firstAttribute="centerX" secondItem="S4b-e2-Rlz" secondAttribute="centerX" id="G0V-vj-gY3"/>
                             <constraint firstItem="cbl-lY-uW3" firstAttribute="leading" secondItem="8ew-p0-goK" secondAttribute="leadingMargin" id="JFi-x8-W7E"/>
                             <constraint firstItem="K54-8s-fhY" firstAttribute="centerX" secondItem="S4b-e2-Rlz" secondAttribute="centerX" id="Q1z-wb-naI"/>
                             <constraint firstItem="fU2-ke-XWr" firstAttribute="centerX" secondItem="EHX-dC-n0v" secondAttribute="centerX" id="V8i-D4-5tc"/>
@@ -305,14 +310,13 @@
                             <constraint firstItem="t43-Fk-HNt" firstAttribute="top" secondItem="K54-8s-fhY" secondAttribute="bottom" constant="8" symbolic="YES" id="kzS-BB-5Xa"/>
                             <constraint firstItem="F3k-ml-1h2" firstAttribute="trailing" secondItem="cbl-lY-uW3" secondAttribute="trailing" id="l53-7d-oHE"/>
                             <constraint firstItem="F3k-ml-1h2" firstAttribute="trailing" secondItem="aEt-Dr-QNM" secondAttribute="trailing" id="uMk-4L-IMj"/>
-                            <constraint firstItem="S4b-e2-Rlz" firstAttribute="top" secondItem="o4a-jM-PXB" secondAttribute="bottom" constant="50" id="yx9-JP-ZcJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ejr-QQ-sp1"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="guessWord" destination="S4b-e2-Rlz" id="F8k-yL-sHV"/>
-                        <outlet property="resultWord" destination="o4a-jM-PXB" id="uSE-6e-dQW"/>
+                        <outlet property="guessWord" destination="S4b-e2-Rlz" id="DJi-FC-s9z"/>
+                        <outlet property="resultWord" destination="H0h-tD-f9o" id="FRY-XN-bNY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DI4-nK-fJL" userLabel="First Responder" sceneMemberID="firstResponder"/>
