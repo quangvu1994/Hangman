@@ -14,7 +14,15 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var resultWord: UILabel!
     @IBOutlet weak var guessWord: UITextField?
-    
+    @IBOutlet weak var head: UIImageView!
+    @IBOutlet weak var body: UIImageView!
+    @IBOutlet weak var leftLeg: UIImageView!
+    @IBOutlet weak var leftArm: UIImageView!
+    @IBOutlet weak var rightArm: UIImageView!
+    @IBOutlet weak var rightLeg: UIImageView!
+    var imageIndex = 0
+    var arrayImage : [UIImageView]?
+
     @IBAction func guessAction(sender: AnyObject) {
         if guessWord?.text != ""{
             if word!.lowercaseString.characters.contains(Character((guessWord?.text?.lowercaseString)!)){
@@ -22,19 +30,33 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
             }else{
                 print("Wrong")
                 missGuessCounter += 1
+                UIView.animateWithDuration(2, animations:{
+                    self.arrayImage![self.imageIndex].alpha = 1
+                    self.imageIndex += 1
+                })
+                if missGuessCounter == 6 {
+                    for i in Range(0...5){
+                        self.arrayImage![i].alpha = 0
+                    }
+                    self.imageIndex = 0
+                    self.missGuessCounter = 0
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let menuViewController = storyboard.instantiateViewControllerWithIdentifier("menu") as! MenuViewController
+                    presentViewController(menuViewController, animated: true, completion: nil)
+                }
             }
         }else{
             print("Please guess a letter")
         }
     }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     override func viewDidLoad(){
         super.viewDidLoad()
+        arrayImage = [head, body, leftLeg, leftArm, rightArm, rightLeg]
         guessWord?.delegate = self
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
-    }
-    func dismissKeyboard(){
-        view.endEditing(true)
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {

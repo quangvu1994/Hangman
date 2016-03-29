@@ -11,7 +11,7 @@
         <!--Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MenuViewController" customModule="Hang_man" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menu" id="BYZ-38-t0r" customClass="MenuViewController" customModule="Hang_man" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1WI-0I-lhK"/>
                         <viewControllerLayoutGuide type="bottom" id="T69-iZ-DoQ"/>
@@ -79,12 +79,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1007" y="307"/>
+            <point key="canvasLocation" x="1033" y="307"/>
         </scene>
         <!--CatogeryViewController-->
         <scene sceneID="v2y-h8-xrN">
             <objects>
-                <viewController title="CatogeryViewController" id="4kj-hA-0Ir" customClass="CategoryViewController" customModule="Hang_man" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="categor" title="CatogeryViewController" id="4kj-hA-0Ir" customClass="CategoryViewController" customModule="Hang_man" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hEl-Cc-8mb"/>
                         <viewControllerLayoutGuide type="bottom" id="Dp4-qY-kcE"/>
@@ -132,7 +132,7 @@
                                     <segue destination="iXs-RS-6M9" kind="push" id="66W-0C-5rD"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a catogory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhX-hG-bet">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhX-hG-bet">
                                 <rect key="frame" x="0.0" y="72" width="320" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="ogQ-Cu-j3e"/>
@@ -194,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ug-Rg-Muu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1007" y="1044"/>
+            <point key="canvasLocation" x="1033" y="1050"/>
         </scene>
         <!--PlayViewController-->
         <scene sceneID="DRf-jG-jxt">
@@ -284,7 +284,7 @@
                                     <constraint firstAttribute="width" constant="294" id="mHq-So-NpD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -315,8 +315,14 @@
                     <navigationItem key="navigationItem" id="ejr-QQ-sp1"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="body" destination="fU2-ke-XWr" id="1EN-bP-nlT"/>
                         <outlet property="guessWord" destination="S4b-e2-Rlz" id="DJi-FC-s9z"/>
+                        <outlet property="head" destination="EHX-dC-n0v" id="BF5-6e-nn9"/>
+                        <outlet property="leftArm" destination="qH9-kB-JCR" id="OLY-vw-rif"/>
+                        <outlet property="leftLeg" destination="6d8-4K-9jr" id="btE-2W-IL3"/>
                         <outlet property="resultWord" destination="H0h-tD-f9o" id="FRY-XN-bNY"/>
+                        <outlet property="rightArm" destination="F3k-ml-1h2" id="syC-h9-DIe"/>
+                        <outlet property="rightLeg" destination="aEt-Dr-QNM" id="bzt-40-wcB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DI4-nK-fJL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -407,7 +413,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aNp-tc-7JE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="475" y="307"/>
+            <point key="canvasLocation" x="581" y="307"/>
         </scene>
     </scenes>
     <resources>
