@@ -35,20 +35,28 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
                     self.imageIndex += 1
                 })
                 if missGuessCounter == 6 {
+                    let alert = UIAlertController(title: "Game Over", message: "Guess Again!", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    
                     for i in Range(0...5){
                         self.arrayImage![i].alpha = 0
                     }
                     self.imageIndex = 0
                     self.missGuessCounter = 0
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let menuViewController = storyboard.instantiateViewControllerWithIdentifier("menu") as! MenuViewController
-                    presentViewController(menuViewController, animated: true, completion: nil)
+                    
                 }
             }
         }else{
             print("Please guess a letter")
         }
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
