@@ -35,8 +35,8 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
                     self.imageIndex += 1
                 })
                 if missGuessCounter == 6 {
-                    let alert = UIAlertController(title: "Game Over", message: "Guess Again!", preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    let alert = UIAlertController(title: "Oops, incorrect!", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                     
                     for i in Range(0...5){
@@ -48,7 +48,9 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
                 }
             }
         }else{
-            print("Please guess a letter")
+            let alert = UIAlertController(title: "Please guess a letter", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
     }
     
