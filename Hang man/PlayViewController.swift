@@ -54,11 +54,17 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
         }
     }
     
+    /**
+    * Dismiss the keyboard when the user hit return/done button
+    */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
     }
     
+    /**
+    * Dismiss the keyboard when the user tap anywhere else
+    */
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -67,8 +73,15 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         arrayImage = [head, body, leftLeg, leftArm, rightArm, rightLeg]
         guessWord?.delegate = self
+        for _ in 0...word!.characters.count{
+            resultWord?.text?.append("_" as Character)
+        }
+        print(word)
     }
     
+    /**
+    * Limit the number of characters to one for the guessing text field
+    */
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text
             else {

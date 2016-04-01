@@ -13,12 +13,22 @@ var word : String?
 class CategoryViewController : UIViewController{
     let category = Category()
     
-    @IBAction func getNationWord(sender: AnyObject) {
-        word = category.getRandomWord("Nation")!
-        for _ in 0...word!.characters.count{
-            // resultWord?.text?.append("_" as Character)
-        }
-        print(word)
+    @IBAction func technologyCategory(sender: AnyObject) {
+        word = category.getRandomWord("Technology")!
     }
-    
+    @IBAction func sportCategory(sender: AnyObject) {
+        word = category.getRandomWord("Sport")!
+    }
+    @IBAction func peopleCategory(sender: AnyObject) {
+        word = category.getRandomWord("People")!
+    }
+    @IBAction func scienceCategory(sender: AnyObject) {
+        word = category.getRandomWord("Science")!
+    }
+    @IBAction func animalCategory(sender: AnyObject) {
+        word = category.getRandomWord("Animal")!
+    }
+    @IBAction func nationCategory(sender: AnyObject) {
+        word = category.getRandomWord("Nation")!
+    }
 }

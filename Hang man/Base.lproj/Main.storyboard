@@ -29,31 +29,14 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sap-s0-SZG">
                                 <rect key="frame" x="124" y="384" width="73" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="Glt-ft-gke"/>
-                                    <constraint firstAttribute="height" constant="42" id="W8e-t6-mLn"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="30"/>
                                 <state key="normal" title="Rule"/>
                                 <connections>
                                     <segue destination="vLA-XZ-WL7" kind="push" id="fwt-f7-So6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJv-XX-PHi">
-                                <rect key="frame" x="124" y="329" width="73" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="CR8-2E-UxY"/>
-                                    <constraint firstAttribute="width" constant="73" id="vyR-Fc-AZx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="30"/>
-                                <state key="normal" title="Mode"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Im1-HW-Q2p">
-                                <rect key="frame" x="124" y="279" width="73" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="iA1-0G-OLj"/>
-                                    <constraint firstAttribute="width" constant="73" id="wtN-L1-m1Y"/>
-                                </constraints>
+                                <rect key="frame" x="124" y="334" width="73" height="42"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="30"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
@@ -64,15 +47,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8dQ-MT-2KO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="11z-ra-JDN"/>
-                            <constraint firstItem="Sap-s0-SZG" firstAttribute="leading" secondItem="XJv-XX-PHi" secondAttribute="leading" id="8R1-rU-mvR"/>
-                            <constraint firstItem="XJv-XX-PHi" firstAttribute="top" secondItem="Im1-HW-Q2p" secondAttribute="bottom" constant="8" symbolic="YES" id="CqA-Vc-6XL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8dQ-MT-2KO" secondAttribute="trailing" constant="14" id="Eav-pC-H56"/>
-                            <constraint firstItem="Sap-s0-SZG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nw3-Ph-elG"/>
-                            <constraint firstItem="Sap-s0-SZG" firstAttribute="top" secondItem="XJv-XX-PHi" secondAttribute="bottom" constant="13" id="cah-yq-vM8"/>
+                            <constraint firstItem="Sap-s0-SZG" firstAttribute="top" secondItem="Im1-HW-Q2p" secondAttribute="bottom" constant="8" symbolic="YES" id="gMK-2Z-yv0"/>
                             <constraint firstItem="8dQ-MT-2KO" firstAttribute="bottom" secondItem="T69-iZ-DoQ" secondAttribute="top" id="gPS-Nb-22j"/>
-                            <constraint firstItem="XJv-XX-PHi" firstAttribute="leading" secondItem="Im1-HW-Q2p" secondAttribute="leading" id="oa0-31-OE3"/>
+                            <constraint firstItem="T69-iZ-DoQ" firstAttribute="top" secondItem="Sap-s0-SZG" secondAttribute="bottom" constant="142" id="k8b-hQ-lyd"/>
+                            <constraint firstItem="Sap-s0-SZG" firstAttribute="leading" secondItem="Im1-HW-Q2p" secondAttribute="leading" id="r7X-RO-ipN"/>
+                            <constraint firstItem="Sap-s0-SZG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u0k-tf-ZI3"/>
                             <constraint firstItem="8dQ-MT-2KO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ylr-nV-wzS"/>
-                            <constraint firstItem="T69-iZ-DoQ" firstAttribute="top" secondItem="Sap-s0-SZG" secondAttribute="bottom" constant="142" id="zMA-my-c10"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wAS-gW-cUd"/>
@@ -101,7 +82,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Animal"/>
                                 <connections>
-                                    <segue destination="iXs-RS-6M9" kind="push" id="0V5-fT-8Bi"/>
+                                    <action selector="animalCategory:" destination="4kj-hA-0Ir" eventType="touchUpInside" id="QRO-79-Yx6"/>
+                                    <segue destination="iXs-RS-6M9" kind="push" id="JFS-cq-cba"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FvZ-qc-zcr">
@@ -109,6 +91,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Science"/>
                                 <connections>
+                                    <action selector="scienceCategory:" destination="4kj-hA-0Ir" eventType="touchUpInside" id="0WV-4O-Iot"/>
                                     <segue destination="iXs-RS-6M9" kind="push" id="ENS-wl-2Lf"/>
                                 </connections>
                             </button>
@@ -117,6 +100,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="People"/>
                                 <connections>
+                                    <action selector="peopleCategory:" destination="4kj-hA-0Ir" eventType="touchUpInside" id="khW-wF-KWR"/>
                                     <segue destination="iXs-RS-6M9" kind="push" id="nq2-vy-Z5c"/>
                                 </connections>
                             </button>
@@ -128,7 +112,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Nation"/>
                                 <connections>
-                                    <action selector="getNationWord:" destination="4kj-hA-0Ir" eventType="touchUpInside" id="cdB-v7-Ucp"/>
+                                    <action selector="nationCategory:" destination="4kj-hA-0Ir" eventType="touchUpInside" id="Pzh-RK-G3L"/>
                                     <segue destination="iXs-RS-6M9" kind="push" id="66W-0C-5rD"/>
                                 </connections>
                             </button>
@@ -146,6 +130,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Technology"/>
                                 <connections>
+                                    <action selector="technologyCategory:" destination="4kj-hA-0Ir" eventType="touchUpInside" id="Mrs-9w-LNq"/>
                                     <segue destination="iXs-RS-6M9" kind="push" id="wvl-oN-YoU"/>
                                 </connections>
                             </button>
@@ -154,6 +139,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Sport"/>
                                 <connections>
+                                    <action selector="sportCategory:" destination="4kj-hA-0Ir" eventType="touchUpInside" id="qo1-k9-aSP"/>
                                     <segue destination="iXs-RS-6M9" kind="push" id="Oe2-m3-tQe"/>
                                 </connections>
                             </button>
@@ -258,7 +244,7 @@
                                     <constraint firstAttribute="height" constant="167" id="nyQ-ft-gsa"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S4b-e2-Rlz">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S4b-e2-Rlz">
                                 <rect key="frame" x="149" y="412" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="2oj-km-Coa"/>
@@ -266,13 +252,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lol" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0h-tD-f9o">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0h-tD-f9o">
                                 <rect key="frame" x="50" y="383" width="294" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K54-8s-fhY">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K54-8s-fhY">
                                 <rect key="frame" x="176" y="459" width="43" height="30"/>
                                 <state key="normal" title="Guess"/>
                                 <connections>
@@ -418,6 +404,6 @@
         <image name="rightLegArm" width="320" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0V5-fT-8Bi"/>
+        <segue reference="wvl-oN-YoU"/>
     </inferredMetricsTieBreakers>
 </document>
