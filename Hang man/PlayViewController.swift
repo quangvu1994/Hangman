@@ -11,6 +11,7 @@ import UIKit
 class PlayViewController : UIViewController, UITextFieldDelegate{
     let limitLength = 1
     var missGuessCounter = 0
+    var correctGuessCounter = 0
     
     @IBOutlet weak var resultWord: UILabel!
     @IBOutlet weak var guessWord: UITextField?
@@ -26,7 +27,21 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
     @IBAction func guessAction(sender: AnyObject) {
         if guessWord?.text != ""{
             if word!.lowercaseString.characters.contains(Character((guessWord?.text?.lowercaseString)!)){
-                print(word!)
+                for i in 0...word!.characters.count{
+                    if word!.lowercaseString[word!.startIndex.advancedBy(i)] == Character(guessWord!.text!.lowercaseString) {
+                        resultWord!.text!.removeAtIndex(resultWord!.text!.startIndex.advancedBy(i))
+                        resultWord!.text!.insert(word![word!.startIndex.advancedBy(i)], atIndex: resultWord!.text!.startIndex.advancedBy(i))
+                        correctGuessCounter += 1
+                        
+                        if correctGuessCounter == word!.characters.count{
+                            let alert = UIAlertController(title: "Yay, that is correct!", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+                            alert.addAction(UIAlertAction(title: "Next Word", style: UIAlertActionStyle.Default, handler: nil))
+                            self.presentViewController(alert, animated: true, completion: nil)
+                            correctGuessCounter = 0
+                        }
+                        break
+                    }
+                }
             }else{
                 print("Wrong")
                 missGuessCounter += 1
@@ -73,10 +88,10 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         arrayImage = [head, body, leftLeg, leftArm, rightArm, rightLeg]
         guessWord?.delegate = self
-        for _ in 0...word!.characters.count{
+        for _ in 0..<word!.characters.count{
             resultWord?.text?.append("_" as Character)
         }
-        print(word)
+        print(word!)
     }
     
     /**
