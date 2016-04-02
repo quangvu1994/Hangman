@@ -9,7 +9,8 @@
 import UIKit
 
 class Category {
-    
+    var word: String?
+    var categoryName: String?
     // Catogeries of words
     var animal: [Int : String]! = [
         1 : "Tiger",
@@ -34,7 +35,7 @@ class Category {
         5 : "Galaxy"
     ]
     var people : [Int :String]! = [
-        1 : "Big Bang",
+        1 : "Snoozy",
         2 : "Gravity",
         3 : "Quantum",
         4 : "Particle",
@@ -56,27 +57,34 @@ class Category {
     ]
     
     
-    func getRandomWord(categoryName: String) -> String?{
+    func getRandomWord(categoryName: String){
         var category = Dictionary<Int, String>()
         switch categoryName.lowercaseString {
         case "sport":
             category = sport
+            self.categoryName = "Sport"
         case "nation":
             category = nation
+            self.categoryName = "Nation"
         case "people":
             category = people
+            self.categoryName = "People"
         case "science":
             category = science
+            self.categoryName = "Science"
         case "technology":
             category = technology
+            self.categoryName = "Technology"
         case "animal":
             category = animal
+            self.categoryName = "Animal"
         default:
-            return nil
+            self.word = nil
         }
         
         let randomNum = Int(arc4random_uniform(4) + 1)
-        return category[randomNum]
+        self.word = category[randomNum]
     }
-
 }
+
+let category = Category()

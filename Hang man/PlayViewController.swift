@@ -26,24 +26,37 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
 
     @IBAction func guessAction(sender: AnyObject) {
         if guessWord?.text != ""{
-            if word!.lowercaseString.characters.contains(Character((guessWord?.text?.lowercaseString)!)){
-                for i in 0...word!.characters.count{
-                    if word!.lowercaseString[word!.startIndex.advancedBy(i)] == Character(guessWord!.text!.lowercaseString) {
+            // User's guess is correct
+            if category.word!.lowercaseString.characters.contains(Character((guessWord?.text?.lowercaseString)!)){
+                for i in 0..<category.word!.characters.count{
+                    // Display the character at the correct position
+                    if category.word!.lowercaseString[category.word!.startIndex.advancedBy(i)] == Character(guessWord!.text!.lowercaseString) {
                         resultWord!.text!.removeAtIndex(resultWord!.text!.startIndex.advancedBy(i))
-                        resultWord!.text!.insert(word![word!.startIndex.advancedBy(i)], atIndex: resultWord!.text!.startIndex.advancedBy(i))
+                        resultWord!.text!.insert(category.word![category.word!.startIndex.advancedBy(i)], atIndex: resultWord!.text!.startIndex.advancedBy(i))
                         correctGuessCounter += 1
-                        
-                        if correctGuessCounter == word!.characters.count{
-                            let alert = UIAlertController(title: "Yay, that is correct!", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-                            alert.addAction(UIAlertAction(title: "Next Word", style: UIAlertActionStyle.Default, handler: nil))
-                            self.presentViewController(alert, animated: true, completion: nil)
-                            correctGuessCounter = 0
-                        }
-                        break
                     }
                 }
+                
+                // Win the game
+                if correctGuessCounter == category.word!.characters.count{
+                    let alert = UIAlertController(title: "Yay, that is correct!", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+                    alert.addAction(UIAlertAction(title: "Next Word!", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+                        category.getRandomWord(category.categoryName!)
+                        for _ in 0..<category.word!.characters.count{
+                            self.resultWord?.text?.append("_" as Character)
+                        }
+                        
+                        for i in Range(0...5){
+                            self.arrayImage![i].alpha = 0
+                        }
+                        self.missGuessCounter = 0
+                        self.imageIndex = 0
+                    }))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    correctGuessCounter = 0
+                }
+            // User's guess is wrong
             }else{
-                print("Wrong")
                 missGuessCounter += 1
                 UIView.animateWithDuration(2, animations:{
                     self.arrayImage![self.imageIndex].alpha = 1
@@ -88,10 +101,10 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         arrayImage = [head, body, leftLeg, leftArm, rightArm, rightLeg]
         guessWord?.delegate = self
-        for _ in 0..<word!.characters.count{
-            resultWord?.text?.append("_" as Character)
+        for _ in 0..<category.word!.characters.count{
+            self.resultWord?.text?.append("_" as Character)
         }
-        print(word!)
+        print(category.word!)
     }
     
     /**
