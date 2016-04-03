@@ -42,6 +42,7 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
                     let alert = UIAlertController(title: "Yay, that is correct!", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
                     alert.addAction(UIAlertAction(title: "Next Word!", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
                         category.getRandomWord(category.categoryName!)
+                        self.resultWord!.text! = ""
                         for _ in 0..<category.word!.characters.count{
                             self.resultWord?.text?.append("_" as Character)
                         }
@@ -51,9 +52,9 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
                         }
                         self.missGuessCounter = 0
                         self.imageIndex = 0
+                        self.correctGuessCounter = 0
                     }))
                     self.presentViewController(alert, animated: true, completion: nil)
-                    correctGuessCounter = 0
                 }
             // User's guess is wrong
             }else{
