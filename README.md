@@ -4,5 +4,3 @@ Have fun! :D
 
 # How to download
 This game is not on app store. Thus, you can download xCode and try this game on the simulator
-
-![Alt text](playScene.jpg/raw=true "Play Scene")
