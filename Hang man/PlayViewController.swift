@@ -12,6 +12,7 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
     let limitLength = 1
     var missGuessCounter = 0
     var correctGuessCounter = 0
+    var characterAlreadyGuess: [String] = []
     
     @IBOutlet weak var resultWord: UILabel!
     @IBOutlet weak var guessWord: UITextField?
@@ -27,7 +28,7 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
     @IBAction func guessAction(sender: AnyObject) {
         if guessWord?.text != ""{
             // User's guess is correct
-            if category.word!.lowercaseString.characters.contains(Character((guessWord?.text?.lowercaseString)!)){
+            if category.word!.lowercaseString.characters.contains(Character((guessWord?.text?.lowercaseString)!)) && !characterAlreadyGuess.contains(guessWord!.text!){
                 for i in 0..<category.word!.characters.count{
                     // Display the character at the correct position
                     if category.word!.lowercaseString[category.word!.startIndex.advancedBy(i)] == Character(guessWord!.text!.lowercaseString) {
@@ -36,6 +37,7 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
                         correctGuessCounter += 1
                     }
                 }
+                self.characterAlreadyGuess.append(guessWord!.text!)
                 
                 // Win the game
                 if correctGuessCounter == category.word!.characters.count{
@@ -53,6 +55,7 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
                         self.missGuessCounter = 0
                         self.imageIndex = 0
                         self.correctGuessCounter = 0
+                        self.characterAlreadyGuess = []
                     }))
                     self.presentViewController(alert, animated: true, completion: nil)
                 }
@@ -71,8 +74,14 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
                     for i in Range(0...5){
                         self.arrayImage![i].alpha = 0
                     }
+                    
+                    self.resultWord!.text! = ""
+                    for _ in 0..<category.word!.characters.count{
+                        self.resultWord?.text?.append("_" as Character)
+                    }
                     self.imageIndex = 0
                     self.missGuessCounter = 0
+                    self.characterAlreadyGuess = []
                     
                 }
             }
