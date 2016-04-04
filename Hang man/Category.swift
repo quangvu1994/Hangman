@@ -11,61 +11,62 @@ import UIKit
 class Category {
     var word: String?
     var categoryName: String?
+    var description: String?
     // Catogeries of words
-    var animal: [Int : String]! = [
-        1 : "Tiger",
-        2 : "Lion",
-        3 : "Dog",
-        4 : "Cat",
-        5 : "Shark"
+    var animal: [Int: (name: String, clue: String)]! = [
+        1 : ("Tiger", "Big kitty"),
+        2 : ("Lion", "King of the jungle"),
+        3 : ("Dog", "A true loyal friend"),
+        4 : ("Cat", "Soft and cute, but probably doesn't care about you"),
+        5 : ("Shark", "Blood seeker of the sea")
     ]
     
-    var technology: [Int : String]! = [
-        1 : "Browser",
-        2 : "Computer",
-        3 : "Internet",
-        4 : "Operating System",
-        5 : "Bluetooth"
+    var technology: [Int: (name: String, clue: String)]! = [
+        1 : ("Browser", "Google Chrome, Safari, Internet Explorer, Fire Fox, etc"),
+        2 : ("Computer", "Biggest evolution of teachnology"),
+        3 : ("Internet", "Thing that the teenager cannot live without"),
+        4 : ("Operating System", "Software manages all the activities of a computer"),
+        5 : ("Bluetooth", "Short range wireless interconnection of different devices")
     ]
-    var science: [Int : String]! = [
-        1 : "Big Bang",
-        2 : "Gravity",
-        3 : "Quantum",
-        4 : "Particle",
-        5 : "Galaxy"
+    var science: [Int: (name: String, clue: String)]! = [
+        1 : ("Big Bang", "How did the universe start... 'scientifically' theory?"),
+        2 : ("Gravity", "How did the apple fall on Newton's head?"),
+        3 : ("Quantum", "The smallest discrete unit of any physical property"),
+        4 : ("Particle", "A minute fragment of matter"),
+        5 : ("Galaxy", "Huge system contains lots of stars and dark matters")
     ]
-    var people : [Int :String]! = [
-        1 : "Snoozy",
-        2 : "Gravity",
-        3 : "Quantum",
-        4 : "Particle",
-        5 : "Galaxy"
+    var people : [Int: (name: String, clue: String)]! = [
+        1 : ("Snoozy", "Beautiful, yet snore. Lovely, yet clumsy"),
+        2 : ("Einstein", "Genius guy invented bunch of energy and gravitational theories "),
+        3 : ("Tesla", "Inventor of the alternating current (AC)"),
+        4 : ("Obama", "Thank you ..."),
+        5 : ("Newton", "Apple loves this guy's head")
     ]
-    var nation : [Int : String]! = [
-        1 : "Vietnam",
-        2 : "England",
-        3 : "Spain",
-        4 : "Russia",
-        5 : "Australia"
+    var city : [Int: (name: String, clue: String)]! = [
+        1 : ("Hanoi", "Best place to try the best Vietnamese dish, Pho"),
+        2 : ("London", "The big smoke city in England"),
+        3 : ("Barcelona", "Rivary of Real Madrid"),
+        4 : ("Tokyo" , "Capital of the sushi country"),
+        5 : ("New York", "The city that never sleeps")
     ]
-    var sport : [Int : String]! = [
-        1 : "Soccer",
-        2 : "Tennis",
-        3 : "Hiking",
-        4 : "Snowboarding",
-        5 : "Sky diving"
+    var sport : [Int: (name: String, clue: String)]! = [
+        1 : ("Soccer", "Play with your feet, and kick the ball to the back of the net"),
+        2 : ("Tennis", "Best known from the Wimbledon competition"),
+        3 : ("Hiking", "Climb the mountain"),
+        4 : ("Football", "Bunch of monstrous athletes chase after the ball and throw it around the field"),
+        5 : ("Sky diving", "You jump out of a plane!")
     ]
     
     
     func getRandomWord(categoryName: String){
-        var category = Dictionary<Int, String>()
+        var category = Dictionary<Int, (name: String, clue: String)>()
         switch categoryName.lowercaseString {
         case "sport":
             category = sport
             self.categoryName = "Sport"
-        case "nation":
-            category = nation
-            self.categoryName = "Nation"
+        case "city":
+            category = city
+            self.categoryName = "City"
         case "people":
             category = people
             self.categoryName = "People"
@@ -83,7 +84,8 @@ class Category {
         }
         
         let randomNum = Int(arc4random_uniform(4) + 1)
-        self.word = category[randomNum]
+        self.word = category[randomNum]!.name
+        self.description = category[randomNum]!.clue
     }
 }
 

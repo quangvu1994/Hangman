@@ -27,6 +27,7 @@ class CategoryViewController : UIViewController{
         category.getRandomWord("Animal")
     }
     @IBAction func nationCategory(sender: AnyObject) {
-        category.getRandomWord("Nation")
+        category.getRandomWord("City")
     }
+
 }

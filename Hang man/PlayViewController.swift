@@ -14,8 +14,10 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
     var correctGuessCounter = 0
     var characterAlreadyGuess: [String] = []
     
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var resultWord: UILabel!
     @IBOutlet weak var guessWord: UITextField?
+    
     @IBOutlet weak var head: UIImageView!
     @IBOutlet weak var body: UIImageView!
     @IBOutlet weak var leftLeg: UIImageView!
@@ -25,7 +27,7 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
     var imageIndex = 0
     var arrayImage : [UIImageView]?
 
-    @IBAction func guessAction(sender: AnyObject) {
+    @IBAction func guessAction(sender: AnyObject?) {
         if guessWord?.text != ""{
             // User's guess is correct
             if category.word!.lowercaseString.characters.contains(Character((guessWord?.text?.lowercaseString)!)) && !characterAlreadyGuess.contains(guessWord!.text!){
@@ -44,6 +46,7 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
                     let alert = UIAlertController(title: "Yay, that is correct!", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
                     alert.addAction(UIAlertAction(title: "Next Word!", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
                         category.getRandomWord(category.categoryName!)
+                        self.descriptionLabel.text = category.description!
                         self.resultWord!.text! = ""
                         for _ in 0..<category.word!.characters.count{
                             self.resultWord?.text?.append("_" as Character)
@@ -81,6 +84,7 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
                     }
                     self.imageIndex = 0
                     self.missGuessCounter = 0
+                    self.correctGuessCounter = 0
                     self.characterAlreadyGuess = []
                     
                 }
@@ -96,6 +100,7 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
     * Dismiss the keyboard when the user hit return/done button
     */
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        guessAction(nil)
         textField.resignFirstResponder()
         return false
     }
@@ -114,7 +119,7 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
         for _ in 0..<category.word!.characters.count{
             self.resultWord?.text?.append("_" as Character)
         }
-        print(category.word!)
+        self.descriptionLabel.text = category.description!
     }
     
     /**
