@@ -71,7 +71,7 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
                     alert.addAction(UIAlertAction(title: "Try Again", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
                     
-                    for i in Range(0...5){
+                    for i in 0...5{
                         self.arrayImage![i].alpha = 0
                     }
                     
@@ -128,5 +128,4 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
         let newLength = text.characters.count + string.characters.count - range.length
         return newLength <= limitLength
     }
-
 }
