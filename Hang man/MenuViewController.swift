@@ -8,6 +8,10 @@
 
 import UIKit
 
+/**
+* MenuViewController is the first scene of the game
+* Does not require much code/setup
+*/
 class MenuViewController: UIViewController {
     
     override func viewDidLoad() {

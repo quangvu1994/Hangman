@@ -8,6 +8,10 @@
 
 import UIKit
 
+/**
+* PlayViewController provides all logical behind every action in the
+* play scene.
+*/
 class PlayViewController : UIViewController, UITextFieldDelegate{
     let limitLength = 1
     var missGuessCounter = 0
@@ -51,10 +55,11 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
                         for _ in 0..<category.word!.characters.count{
                             self.resultWord?.text?.append("_" as Character)
                         }
-                        
+                        // Hide all hangman's images
                         for i in Range(0...5){
                             self.arrayImage![i].alpha = 0
                         }
+                        // Reset variables for a new game
                         self.missGuessCounter = 0
                         self.imageIndex = 0
                         self.correctGuessCounter = 0
@@ -89,6 +94,7 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
                     
                 }
             }
+        // Handle a scenario when the user doesn't put any input
         }else{
             let alert = UIAlertController(title: "Please guess a letter", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
@@ -116,9 +122,14 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         arrayImage = [head, body, leftLeg, leftArm, rightArm, rightLeg]
         guessWord?.delegate = self
+        
         for _ in 0..<category.word!.characters.count{
             self.resultWord?.text?.append("_" as Character)
         }
+        
+        self.descriptionLabel.lineBreakMode = .ByWordWrapping
+        self.descriptionLabel.numberOfLines = 3
+        self.descriptionLabel.sizeToFit()
         self.descriptionLabel.text = category.description!
     }
     

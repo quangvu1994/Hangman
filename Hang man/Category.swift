@@ -8,11 +8,16 @@
 
 import UIKit
 
+/**
+* The Category class provides a set of different categories.
+*/
 class Category {
+    
     var word: String?
     var categoryName: String?
     var description: String?
-    // Catogeries of words
+    
+    // Catogeries of word and its description
     var animal: [Int: (name: String, clue: String)]! = [
         1 : ("Tiger", "Big kitty"),
         2 : ("Lion", "King of the jungle"),
@@ -25,7 +30,7 @@ class Category {
         1 : ("Browser", "Google Chrome, Safari, Internet Explorer, Fire Fox, etc"),
         2 : ("Computer", "Biggest evolution of teachnology"),
         3 : ("Internet", "Thing that the teenager cannot live without"),
-        4 : ("Operating System", "Software manages all the activities of a computer"),
+        4 : ("Operating System", "A Software that manages all the activities of a computer"),
         5 : ("Bluetooth", "Short range wireless interconnection of different devices")
     ]
     var science: [Int: (name: String, clue: String)]! = [
@@ -57,7 +62,13 @@ class Category {
         5 : ("Sky diving", "You jump out of a plane!")
     ]
     
-    
+    /**
+    * The function pick the selected category and grab a random word
+    * from it. Then, it initializes the word and description
+    *
+    * @param: categoryName - name of the desired category
+    * @return: None
+    */
     func getRandomWord(categoryName: String){
         var category = Dictionary<Int, (name: String, clue: String)>()
         switch categoryName.lowercaseString {
@@ -83,10 +94,16 @@ class Category {
             self.word = nil
         }
         
+        // Selecting a random word
         let randomNum = Int(arc4random_uniform(4) + 1)
         self.word = category[randomNum]!.name
         self.description = category[randomNum]!.clue
     }
 }
+
+/**
+* Set a global instance of category that can be used by other UIViewControllers
+* Note: an issue that need to be fix in the future. We don't want global variable!
+*/
 
 let category = Category()

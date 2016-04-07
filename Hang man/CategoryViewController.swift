@@ -8,6 +8,12 @@
 
 import UIKit
 
+/**
+* CategoryViewController provides the logical behind each 
+* button on the category scene. 
+* For each action, it simply grabs a random word from the 
+* category.  
+*/
 
 class CategoryViewController : UIViewController{
     
