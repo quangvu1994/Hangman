@@ -82,8 +82,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Animal"/>
                                 <connections>
-                                    <action selector="animalCategory:" destination="4kj-hA-0Ir" eventType="touchUpInside" id="QRO-79-Yx6"/>
-                                    <segue destination="iXs-RS-6M9" kind="push" id="JFS-cq-cba"/>
+                                    <segue destination="iXs-RS-6M9" kind="push" identifier="animal" id="JFS-cq-cba"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FvZ-qc-zcr">
@@ -91,7 +90,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Science"/>
                                 <connections>
-                                    <action selector="scienceCategory:" destination="4kj-hA-0Ir" eventType="touchUpInside" id="0WV-4O-Iot"/>
                                     <segue destination="iXs-RS-6M9" kind="push" id="ENS-wl-2Lf"/>
                                 </connections>
                             </button>
@@ -100,8 +98,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="People"/>
                                 <connections>
-                                    <action selector="peopleCategory:" destination="4kj-hA-0Ir" eventType="touchUpInside" id="khW-wF-KWR"/>
-                                    <segue destination="iXs-RS-6M9" kind="push" id="nq2-vy-Z5c"/>
+                                    <segue destination="iXs-RS-6M9" kind="push" identifier="people" id="nq2-vy-Z5c"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QtZ-G2-FJV">
@@ -112,7 +109,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="City"/>
                                 <connections>
-                                    <action selector="nationCategory:" destination="4kj-hA-0Ir" eventType="touchUpInside" id="Pzh-RK-G3L"/>
                                     <segue destination="iXs-RS-6M9" kind="push" id="66W-0C-5rD"/>
                                 </connections>
                             </button>
@@ -130,7 +126,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Technology"/>
                                 <connections>
-                                    <action selector="technologyCategory:" destination="4kj-hA-0Ir" eventType="touchUpInside" id="Mrs-9w-LNq"/>
                                     <segue destination="iXs-RS-6M9" kind="push" id="wvl-oN-YoU"/>
                                 </connections>
                             </button>
@@ -139,7 +134,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Sport"/>
                                 <connections>
-                                    <action selector="sportCategory:" destination="4kj-hA-0Ir" eventType="touchUpInside" id="qo1-k9-aSP"/>
                                     <segue destination="iXs-RS-6M9" kind="push" id="Oe2-m3-tQe"/>
                                 </connections>
                             </button>
@@ -420,6 +414,6 @@
         <image name="rightLegArm" width="320" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wvl-oN-YoU"/>
+        <segue reference="JFS-cq-cba"/>
     </inferredMetricsTieBreakers>
 </document>

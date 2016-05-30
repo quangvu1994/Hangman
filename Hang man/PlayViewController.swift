@@ -13,6 +13,9 @@ import UIKit
 * play scene.
 */
 class PlayViewController : UIViewController, UITextFieldDelegate{
+    
+    var categorySelection: String = ""
+    var category = Category()
     let limitLength = 1
     var missGuessCounter = 0
     var correctGuessCounter = 0
@@ -49,10 +52,10 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
                 if correctGuessCounter == category.word!.characters.count{
                     let alert = UIAlertController(title: "Yay, that is correct!", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
                     alert.addAction(UIAlertAction(title: "Next Word!", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
-                        category.getRandomWord(category.categoryName!)
-                        self.descriptionLabel.text = category.description!
+                        self.category.getRandomWord(self.category.categoryName!)
+                        self.descriptionLabel.text = self.category.description!
                         self.resultWord!.text! = ""
-                        for _ in 0..<category.word!.characters.count{
+                        for _ in 0..<self.category.word!.characters.count{
                             self.resultWord?.text?.append("_" as Character)
                         }
                         // Hide all hangman's images
@@ -120,6 +123,7 @@ class PlayViewController : UIViewController, UITextFieldDelegate{
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        self.category.getRandomWord(categorySelection)
         arrayImage = [head, body, leftLeg, leftArm, rightArm, rightLeg]
         guessWord?.delegate = self
         

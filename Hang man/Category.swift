@@ -71,6 +71,7 @@ class Category {
     */
     func getRandomWord(categoryName: String){
         var category = Dictionary<Int, (name: String, clue: String)>()
+        
         switch categoryName.lowercaseString {
         case "sport":
             category = sport
@@ -101,9 +102,3 @@ class Category {
     }
 }
 
-/**
-* Set a global instance of category that can be used by other UIViewControllers
-* Note: an issue that need to be fix in the future. We don't want global variable!
-*/
-
-let category = Category()

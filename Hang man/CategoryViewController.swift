@@ -11,29 +11,26 @@ import UIKit
 /**
 * CategoryViewController provides the logical behind each 
 * button on the category scene. 
-* For each action, it simply grabs a random word from the 
-* category.  
+* For each action, it simply send the category selection to the PlayViewController class
 */
 
 class CategoryViewController : UIViewController{
     
-    @IBAction func technologyCategory(sender: AnyObject) {
-        category.getRandomWord("Technology")
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let playViewCategory: PlayViewController = segue.destinationViewController as! PlayViewController
+        if segue.identifier == "technology" {
+            playViewCategory.categorySelection = "technology"
+        }else if segue.identifier == "people" {
+            playViewCategory.categorySelection = "people"
+        }else if segue.identifier == "science" {
+            playViewCategory.categorySelection = "science"
+        }else if segue.identifier == "animal" {
+            playViewCategory.categorySelection = "animal"
+        }else if segue.identifier == "city" {
+            playViewCategory.categorySelection = "city"
+        }else {
+            playViewCategory.categorySelection = "sport"
+        }
     }
-    @IBAction func sportCategory(sender: AnyObject) {
-        category.getRandomWord("Sport")
-    }
-    @IBAction func peopleCategory(sender: AnyObject) {
-        category.getRandomWord("People")
-    }
-    @IBAction func scienceCategory(sender: AnyObject) {
-        category.getRandomWord("Science")
-    }
-    @IBAction func animalCategory(sender: AnyObject) {
-        category.getRandomWord("Animal")
-    }
-    @IBAction func nationCategory(sender: AnyObject) {
-        category.getRandomWord("City")
-    }
-
 }
